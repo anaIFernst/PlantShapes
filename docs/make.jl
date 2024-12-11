@@ -4,16 +4,18 @@ using Documenter
 DocMeta.setdocmeta!(PlantShapes, :DocTestSetup, :(using PlantShapes); recursive=true)
 
 makedocs(;
-    modules=[PlantShapes],
-    authors="anaIFernst <ana.ferreiraernst@wur.nl> and contributors",
-    sitename="PlantShapes.jl",
-    format=Documenter.HTML(;
-        canonical="https://anaIFernst.github.io/PlantShapes.jl",
-        edit_link="master",
-        assets=String[],
+    doctest = false,
+    modules = [PlantShapes],
+    authors = "anaIFernst <ana.ferreiraernst@wur.nl> and contributors",
+    sitename = "PlantShapes.jl",
+    repo = "https://github.com/anaIFernst/PlantShapes.jl/blob/{commit}{path}#{line}",
+    format = Documenter.HTML(;
+        prettyurls = get(ENV, "CI", "false") == "true",
+        edit_link = "master",
+        assets = String[],
     ),
-    pages=[
-        "Home" => "index.md",
+    pages = [
+        "API" => "index.md",
     ],
 )
 
